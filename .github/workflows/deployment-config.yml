@@ -17,6 +17,8 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Configure AWS Credentials
+      run: echo "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY, AWS_REGION=$AWS_REGION"
+
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
