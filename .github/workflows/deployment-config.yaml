@@ -52,7 +52,7 @@ jobs:
       
     - name: Sync Directory to S3
       run: |
-        aws s3 sync ./dist s3://vue-blogs-frontend/ --delete
+        aws s3 sync ./ s3://vue-blogs-frontend/ --delete
 
     - name: Invalidate CloudFront Distribution
       run: |
