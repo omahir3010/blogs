@@ -42,12 +42,10 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
-    - name: Clear S3 Folder
-      run: aws s3 rm s3://vue-blogs-frontend/ --recursive
       
     - name: Sync Directory to S3
       run: |
-        aws s3 sync ./ s3://vue-blogs-frontend/
+        aws s3 sync ./ s3://vue-blogs-frontend/ --delete
 
     - name: Invalidate CloudFront Distribution
       run: |
