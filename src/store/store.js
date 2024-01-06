@@ -9,7 +9,7 @@ const state = {
 const actions = {
    getBlogsData({commit}){
     console.log(process.env)
-       axios.get(process.env.VUE_APP_API_GATEWAY + 'prod/blogs')
+       axios.get('https://762j5o41sj.execute-api.us-east-1.amazonaws.com/prod/blogs')
        .then((response) => {
         console.log(response.data)
            commit('commitBlogs' , response.data['data'])
