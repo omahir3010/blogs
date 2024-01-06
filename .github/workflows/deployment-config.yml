@@ -37,7 +37,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Configure AWS Credentials
-      run: echo "AWS_BUCKET_FRONT=${{ secrets.AWS_BUCKET_FRONT }}", "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}", "AWS_REGION=${{ secrets.AWS_REGION }}"
+      run: echo "AWS_BUCKET_FRONT=${{ secrets.AWS_BUCKET_FRONT }}"
 
     - name: Sync Directory to S3
       run: |
