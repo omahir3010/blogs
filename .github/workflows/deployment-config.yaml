@@ -39,14 +39,14 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
+        aws-access-key-id: AKIAQL4ROJRFF4IVREOR
+        aws-secret-access-key: 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
         aws-region: us-east-1
 
     - name: Sync Directory to S3
       run: |
-        aws s3 sync deployment s3://${{ env.S3_BUCKET_NAME }}/ --delete
+        aws s3 sync deployment s3://vue-blogs-frontend/ --delete
 
     - name: Invalidate CloudFront Distribution
       run: |
-        aws cloudfront create-invalidation --distribution-id ${{ env.DISTRIBUTION_FRONT }} --paths "/*"
+        aws cloudfront create-invalidation --distribution-id E1C72NSN13TJBG --paths "/*"
