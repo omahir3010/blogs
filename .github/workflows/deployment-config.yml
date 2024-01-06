@@ -1,54 +1,47 @@
-name: Deploy Front Production
-
+---
+name: Build and Deploy React App to CloudFront
 on:
   push:
-    branch: 'main'
-    paths:
-      - 'dist/**'
-
+    branches: [ main ]
 jobs:
-  deploy:
+  build-and-deploy:
+    name: Build and Deploy
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: 'dist'
+    env:
+      BUCKET: ${{ secrets.AWS_BUCKET_FRONT }}
+      DIST: build
+      REGION: us-east-1
+      DIST_ID: ${{ secrets.DISTRIBUTION_FRONT }}
+
     steps:
-      - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
 
-      - name: Cache modules
-        uses: actions/cache@v1
-        id: yarn-cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn-
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.REGION }}
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+    # - uses: actions/setup-node@v2
+    #   with:
+    #     node-version: '16'
 
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
+    - name: Install Dependencies
+      run: |
+        node --version
+        npm ci --production
 
-      - name: Run a multi-line script
-        run: |
-          npm install
-          npm run build
-      
-      - name: Deploy
-        run: aws s3 sync ./dist s3://${{ secrets.AWS_BUCKET_FRONT }}
+    - name: Build Static Website
+      run: npm run build
 
-      - name: Invalidate CloudFront
-        uses: chetan/invalidate-cloudfront-action@v2
-        env:
-          DISTRIBUTION: ${{ secrets.DISTRIBUTION_FRONT }}
-          PATHS: "/index.html"
-          AWS_REGION: "${{ secrets.AWS_REGION }}"
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    - name: Copy files to the production website with the AWS CLI
+      run: |
+        aws s3 sync --delete ${{ env.DIST }} s3://${{ env.BUCKET }}
 
+    - name: Copy files to the production website with the AWS CLI
+      run: |
+        aws cloudfront create-invalidation \
+          --distribution-id ${{ env.DIST_ID }} \
+          --paths "/*"
