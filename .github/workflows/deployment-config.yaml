@@ -19,12 +19,6 @@ jobs:
       with:
         node-version: '18'
         
-    - name: Install Node Important Files
-      run: npm install
-        
-    - name: Build Static Website
-      run: npm run build
-      
     - name: Install Dependencies
       run: |
         node --version
@@ -36,7 +30,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    
+    - name: Checkout
+      uses: actions/checkout@v2
+
+      
+    - name: Install Node Important Files
+      run: npm install
+        
+    - name: Build Static Website
+      run: npm run build
+
+      
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v4.0.1
       with:
