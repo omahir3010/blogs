@@ -13,10 +13,6 @@ jobs:
       # REGION: us-east-1
       
     steps:
-    - name: Checkout
-      run: echo "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY, AWS_REGION=$AWS_REGION"
-
-
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
