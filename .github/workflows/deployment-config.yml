@@ -1,45 +1,52 @@
----
-name: Build and Deploy React App to CloudFront
+name: Build and Deploy Portfolio
+
 on:
   push:
-    branches: [ main ]
-jobs:
-  build-and-deploy:
-    name: Build and Deploy
-    runs-on: ubuntu-latest
-    # env:
-      # BUCKET: ${{ secrets.AWS_BUCKET_FRONT }}
-      # DIST: build
-      # REGION: us-east-1
-      
-    steps:
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        BUCKET: ${{ secrets.AWS_BUCKET_FRONT }}
-        DIST_ID: E1C72NSN13TJBG
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1
+    branches:
+      - main
 
-    # - uses: actions/setup-node@v2
-    #   with:
-    #     node-version: '16'
+env:
+  AWS_REGION: 'us-east-1'
+  S3_BUCKET_NAME: 'vue-blogs-frontend'
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '18'
 
     - name: Install Dependencies
       run: |
         node --version
         npm ci --production
 
-    - name: Build Static Website
-      run: npm run build
+  deploy:
+    name: Deployment
+    needs: build
+    runs-on: ubuntu-latest
 
-    - name: Copy files to the production website with the AWS CLI
-      run: |
-        aws s3 sync --delete ${{ env.DIST }} s3://${{ env.BUCKET }}
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
 
-    - name: Copy files to the production website with the AWS CLI
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4.0.1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Sync Directory to S3
       run: |
-        aws cloudfront create-invalidation \
-          --distribution-id ${{ env.DIST_ID }} \
-          --paths "/*"
+        aws s3 sync deployment s3://${{ env.S3_BUCKET_NAME }}/ --delete
+
+    - name: Invalidate CloudFront Distribution
+      run: |
+        aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
