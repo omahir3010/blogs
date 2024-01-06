@@ -12,7 +12,6 @@ jobs:
       DIST: build
       REGION: us-east-1
       DIST_ID: E1C72NSN13TJBG
-
     steps:
     - name: Checkout
       uses: actions/checkout@v2
