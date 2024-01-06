@@ -11,7 +11,7 @@ jobs:
       BUCKET: ${{ secrets.AWS_BUCKET_FRONT }}
       DIST: build
       REGION: us-east-1
-      DIST_ID: ${{ secrets.DISTRIBUTION_FRONT }}
+      DIST_ID: E1C72NSN13TJBG
 
     steps:
     - name: Checkout
