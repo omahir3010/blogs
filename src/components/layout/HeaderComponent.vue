@@ -11,9 +11,7 @@
                 <div class="hover:underline">
                     <a href="#">AWS</a>
                 </div>
-            <div class="hover:underline">
-                    <a href="#">Architecture Patterns</a>
-                </div>
+           
                </div>
             <div class="h-4/5 w-4/12 flex justify-end space-x-4 items-center">
                 <div class="border-[1px] rounded-full p-2 border-gray-300/50 dark:border-gray-400/40 cursor-pointer"
