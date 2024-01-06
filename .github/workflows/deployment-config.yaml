@@ -23,6 +23,9 @@ jobs:
         node-version: '18'
 
         
+    - name: Install Node Important Files
+      run: npm install
+        
     - name: Build Static Website
       run: npm run build
       
