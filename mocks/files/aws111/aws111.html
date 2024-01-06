@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uploading Files to Amazon S3</title>
+  <style>
+    body {
+      background-color: var(--background-color);
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      text-align: center;
+      padding: 1em 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 10px;
+      line-height: 1.6;
+      color: var(--text-color);
+      transition: background-color 0.3s;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: var(--text-color);
+    }
+
+    p {
+      font-size: 1.4em;
+      font-weight: 200;
+      color: var(--text-color-light);
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .step {
+      padding: 15px;
+
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 20px;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .note {
+      color: var(--text-color-light);
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>A Simple Guide to Uploading Files to Amazon S3</h1>
+  </header>
+
+  <main id="main">
+
+    <div class="step">
+      <h2>Step 1: Sign in to AWS</h2>
+      <p>Begin by navigating to the <a href="https://aws.amazon.com/" target="_blank">AWS Management Console</a> and
+        logging in with your AWS account credentials.</p>
+    </div>
+
+    <div class="step">
+      <h2>Step 2: Access Amazon S3</h2>
+      <p>Once in the AWS Console, locate and click on "S3" under the "Services" section.</p>
+    </div>
+
+    <div class="step">
+      <h2>Step 3: Create a Storage Bucket (if needed)</h2>
+      <p>If you don't have a bucket yet, click "Create bucket." Assign it a unique name, choose a region, and follow the
+        prompts to complete the creation process.</p>
+      <div class="mt-10">
+        <img src="./create-s3-bucket-1.png" alt="">
+      </div>
+
+
+    </div>
+    <div class="step">
+      <h2>Specify a unique and S3-formatted name for the bucket</h2>
+      <div class="mt-10">
+        <img src="./create-s3-bucket-3.png" alt="">
+      </div>
+    </div>
+    <div class="step">
+      <h2>Enabling blocking ensures that the bucket will not be publicly accessible</h2>
+      <div class="mt-10">
+        <img src="./create-s3-bucket-4.png" alt="">
+      </div>
+    </div>
+    <div class="step">
+      <h2>Click on Create Bucket to create a bucket</h2>
+      <div class="mt-10">
+        <img src="./create-s3-bucket-5.png" alt="">
+      </div>
+    </div>
+    <div class="step">
+      <h2>Step 4: Open Your Storage Bucket</h2>
+      <p>Click on the name of the bucket you created or an existing one to open its details.</p>
+    </div>
+
+    <div class="step">
+      <h2>Step 5: Upload Your File</h2>
+      <p>Within the bucket, click "Upload." Add your desired file(s), proceed to the next steps, and set permissions
+        (usually, keeping it private). Confirm and complete the upload process.</p>
+    </div>
+
+    <div class="step success">
+      <h2>Step 6: Verify the Upload</h2>
+      <p>Upon successful upload, you'll receive a confirmation message. Click on the uploaded file within your S3 bucket
+        to confirm its presence.</p>
+    </div>
+
+    <p class="note"><strong>Note:</strong> Congratulations! You've accomplished a seamless file upload to Amazon S3
+      using the AWS Console. If you have additional files to upload, follow these steps as needed. This method is
+      perfect for occasional use or when dealing with a small number of files. For frequent or bulk file transfers,
+      consider exploring other tools such as AWS CLI or SDKs.</p>
+
+  </main>
+
+  <script>
+
+  </script>
+
+</body>
+
+</html>

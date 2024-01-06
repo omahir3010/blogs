@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creating an Amazon API Gateway and Connecting to AWS Lambda</title>
+  <style>
+    body {
+      background-color: var(--background-color);
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      text-align: center;
+      padding: 1em 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 10px;
+      line-height: 1.6;
+      color: var(--text-color);
+      transition: background-color 0.3s;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: var(--text-color);
+    }
+
+    p {
+      font-size: 1.4em;
+      font-weight: 200;
+      color: var(--text-color-light);
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .step {
+      padding: 15px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 20px;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .note {
+      color: var(--text-color-light);
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Creating an Amazon API Gateway and Connecting to AWS Lambda</h1>
+  </header>
+
+  <main id="main">
+
+    <div class="step">
+      <h2>Step 1: Sign in to AWS</h2>
+      <p>Begin by navigating to the <a href="https://aws.amazon.com/" target="_blank">AWS Management Console</a> and logging in with your AWS account credentials.</p>
+    </div>
+
+    <div class="step">
+      <h2>Step 2: Access API Gateway</h2>
+      <p>In the AWS Console, locate and click on "API Gateway" under the "Services" section.</p>
+    </div>
+
+    <div class="step">
+      <h2>Step 3: Create a New API</h2>
+      <p>Click on "Create API" to start the API creation process. Choose "HTTP API" or "REST API" based on your requirements.</p>
+      <div class="mt-10">
+        <img src="./gateway-1.png" alt="">
+      </div>
+    </div>
+
+    <div class="step">
+      <h2>Step 4: Configure API Settings</h2>
+      <p>Define your API's name and other settings. Follow the prompts to complete the configuration.</p> 
+    </div>
+
+    <div class="step">
+      <h2>Step 5: Create a Resource</h2>
+      <p>Add a resource to your API to represent a logical unit of functionality. Configure methods (GET, POST, etc.) for this resource.</p>
+      <div class="mt-10">
+        <img src="./gateway-3.png" alt="">
+      </div>
+    </div>
+
+    <div class="step">
+      <h2>Step 6: Create an AWS Lambda Function</h2>
+      <p>Navigate to the AWS Lambda service in the AWS Console. Create a new Lambda function, defining your function name, runtime, and role.</p>
+      <div class="mt-10">
+        <img src="./gateway-4.png" alt="">
+      </div>
+    </div>
+
+    <div class="step">
+      <h2>Step 7: Connect Lambda to API Gateway</h2>
+      <p>In the API Gateway console, go to your API's "Integration" settings. Create a new integration and link it to your AWS Lambda function.</p>
+    </div>
+
+    <div class="step success">
+      <h2>Step 8: Deploy Your API</h2>
+      <p>Once configured, deploy your API to make it accessible. You'll receive a URL endpoint that can be used to invoke your Lambda function.</p>
+      <div class="mt-10">
+        <img src="./gateway-5.png" alt="">
+      </div>
+    </div>
+
+    <p class="note"><strong>Note:</strong> Congratulations! You've successfully created an Amazon API Gateway and connected it to AWS Lambda. This setup allows you to expose your Lambda functions as APIs. Explore additional features such as custom domains, security, and monitoring to enhance your API setup.</p>
+
+  </main>
+
+  <script>
+
+  </script>
+
+</body>
+</html>

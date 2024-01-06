@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CI/CD Pipeline with AWS CodePipeline and GitHub</title>
+    <style>
+        body {
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 10px;
+            line-height: 1.6;
+            color: var(--text-color);
+            transition: background-color 0.3s;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: var(--text-color);
+        }
+
+        p {
+            font-size: 1.4em;
+            font-weight: 200;
+            color: var(--text-color-light);
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .step {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .note {
+            color: var(--text-color-light);
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CI/CD Pipeline with AWS CodePipeline and GitHub</h1>
+    </header>
+
+    <main id="main">
+
+        <!-- Step 1: Pull Code from GitHub -->
+        <div class="step">
+            <h2>Step 1: Pull Code from GitHub</h2>
+            <p>Initiate the CI/CD pipeline by pulling the latest code changes from your GitHub repository. This marks the beginning of the automated workflow orchestrated by AWS CodePipeline.</p>
+        </div>
+
+        <!-- Step 2: Create a Build for the Project using CodeBuild -->
+        <div class="step">
+            <h2>Step 2: Create a Build for the Project using AWS CodeBuild</h2>
+            <p>Configure an AWS CodeBuild project to compile, test, and package your code. AWS CodeBuild, a fully managed build service, eliminates the need for managing build servers and seamlessly integrates into the CI/CD pipeline.</p>
+            <div class="mt-10">
+                <img src="./cicd-1.png" alt="">
+              </div>
+
+        </div>
+
+        <div class="step">
+            <h2> Choose the pipeline setting that needs to be configured for AWS CodePipeline </h2>
+            <div class="mt-10">
+                <img src="./cicd-2.png" alt="">
+              </div>
+        </div>
+        <div class="step">
+            <h2> Choose the source stage from where the code needs to be pulled like: (AWS CodeCommit OR GitHub)  </h2>
+            <div class="mt-10">
+                <img src="./cicd-3.png" alt="">
+              </div>
+        </div>
+        <!-- Step 3: Add Build to Amazon S3 -->
+        <div class="step">
+            <h2>Step 3: Add Build to Amazon S3 to specific Bucket location</h2>
+            <p>As part of the build process, configure AWS CodeBuild to store the generated artifacts in an Amazon S3 bucket. This ensures easy retrieval and deployment of the built code during subsequent pipeline stages.</p>
+        </div>
+
+        <!-- Step 4: Notify CloudFront of Changes -->
+        <div class="step">
+            <h2>Step 4: Notify CloudFront of Changes</h2>
+            <p>For CloudFront deployments, create an invalidation through the AWS Management Console after updating your frontend. Specify the paths or use `/*` to invalidate all cached content. CloudFront will refresh its cache, ensuring users receive the latest resources. Utilize unique versioning or timestamps for assets to bypass caching issues.</p>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="step success">
+            <h2>Conclusion</h2>
+            <p>Congratulations! By following these steps, you've successfully established a CI/CD pipeline using AWS CodePipeline and GitHub. This automated pipeline enhances efficiency and accelerates the delivery of software changes. Continuously optimize and customize your CI/CD pipeline based on your project's specific requirements. Happy coding!</p>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

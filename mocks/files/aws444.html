@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using AWS CloudFront with Amazon S3</title>
+    <style>
+        body {
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 10px;
+            line-height: 1.6;
+            color: var(--text-color);
+            transition: background-color 0.3s;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: var(--text-color);
+        }
+
+        p {
+            font-size: 1.4em;
+            font-weight: 200;
+            color: var(--text-color-light);
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .step {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .note {
+            color: var(--text-color-light);
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Using AWS CloudFront with Amazon S3</h1>
+    </header>
+
+    <main id="main">
+
+        <!-- Step 1: Introduction to AWS CloudFront -->
+        <div class="step">
+            <h2>Step 1: Introduction to AWS CloudFront</h2>
+            <p>AWS CloudFront is a content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency and high transfer speeds. It integrates with other Amazon Web Services products to give developers and businesses an easy way to distribute content to end-users.</p>
+        </div>
+
+        <!-- Step 2: Creating a CloudFront Distribution -->
+        <div class="step">
+            <h2>Step 2: Creating a CloudFront Distribution</h2>
+            <p>Follow these steps to create a CloudFront distribution:</p>
+            <ol>
+                <li>Log in to the AWS Management Console and navigate to the CloudFront service.</li>
+                <li>Click on "Create Distribution."</li>
+                <li>Choose the delivery method - "Web" for websites or "RTMP" for media streaming.</li>
+                <li>Configure the distribution settings, including the origin (usually an S3 bucket), cache behavior, and distribution settings.</li>
+                <li>Click "Create Distribution."</li>
+            </ol>
+            <p>Once created, CloudFront provides a unique domain name (e.g., abcdefghijklmn.cloudfront.net) that you can use to serve content globally.</p>
+        </div>
+
+        <!-- Step 3: Serving Files via Amazon S3 -->
+        <div class="step">
+            <h2>Step 3: Serving Files via Amazon S3</h2>
+            <p>To serve files via Amazon S3 and CloudFront:</p>
+            <ol>
+                <li>Create an S3 bucket and upload your files to it.</li>
+                <li>Ensure the S3 bucket is set up as an origin in your CloudFront distribution.</li>
+                <li>Configure the desired cache behaviors for your files.</li>
+                <li>Access your content through the CloudFront domain name, and CloudFront will fetch the files from the S3 bucket.</li>
+            </ol>
+            <p>CloudFront provides advantages such as reduced latency, improved user experience, and lower data transfer costs.</p>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="step success">
+            <h2>Conclusion</h2>
+            <p>Congratulations! You've successfully learned how to use AWS CloudFront with Amazon S3 to create a scalable and efficient content delivery solution. By integrating CloudFront with S3, you can deliver content to users globally with low latency, high transfer speeds, and improved performance.</p>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
