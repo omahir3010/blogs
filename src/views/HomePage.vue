@@ -7,7 +7,8 @@
             bg-gradient-to-r bg-clip-text  text-transparent p-2
             from-indigo-500 via-purple-500 to-indigo-500
             animate-text" >
-             Your Roadmap to Understanding Amazon Web Services!
+             Your Roadmap to Understanding Amazon Web Services and  <br>
+             Becoming Cloud Enginner
                </h2>
 
           </div>
