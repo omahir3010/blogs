@@ -9,5 +9,6 @@ module.exports = defineConfig({
       .use('html-loader')
       .loader('html-loader')
       .end();
-  }
+  },
+  
 })

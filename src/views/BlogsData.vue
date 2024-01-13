@@ -2,12 +2,13 @@
     <div v-if="getBlogsData == null || undefined">
         <div></div>
     </div>
-    <div v-else>
-        <div v-html="aws222">
+    <div v-if="renderData != null">
+        <div v-html="renderData">
         </div>
     </div>
 </template>
 <script>
+/* eslint-disable */ 
 import store from '@/store/store';
 import { useRoute } from 'vue-router';
 import aws111 from '../../mocks/files/aws333/aws333.html'
@@ -15,6 +16,7 @@ export default {
     data() {
         return {
             aws222: aws111,
+            renderData:null
         }
     },
     computed: {
@@ -41,7 +43,22 @@ export default {
 
             });
 
-            return blogsData[0];
+            if(blogsData[0]['url'] != null || blogsData[0]['url'] != undefined ){
+                fetch(blogsData[0]['url'])
+                    .then((response) => {
+                        console.log(response)
+
+                        return response.text();
+                    })
+                    .then((html) => {
+                       this.renderData = html;
+                       this.blogsUrl = blogsData[0]['url'];
+                        return html;
+                    }).catch((err)=>{
+                        console.log(err)
+                    })
+            }
+           
         }
 
     },
