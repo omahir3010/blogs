@@ -1,18 +1,24 @@
 <template>
     <div
         class="top-0 sm:top-4 rounded-none h-[70px] mb-7 sm:rounded-full border-b sm:border border border-gray-300/50 dark:border-gray-400/40 p-4 z-50 backdrop-blur-md dark:backdrop-blur-md w-full m-auto max-w-4xl flex justify-between items-center sticky">
-        <div class="container flex justify-between items-center text-xl sm:space-x-5 w-full">
+        <div class="container flex justify-around items-center text-xl sm:space-x-5 w-full">
             <div class="h-[60px] flex justify-start items-center text-[23px] font-light w-1/3">
                 <div>
                     <a href="/"> {{ logoName }}</a>
                 </div>
             </div>
             <div class="flex justify-around w-3/4 font-light">
-                <div class="hover:underline">
+                <div class="hover:underline text-[18px]">
                     <a href="#">AWS</a>
                 </div>
            
                </div>
+               <!-- <div class="flex justify-around w-3/4 font-light">
+                <div class="hover:underline text-[18px]">
+                    <a href="#">RoadMap</a>
+                </div>
+           
+               </div> -->
             <div class="h-4/5 w-4/12 flex justify-end space-x-4 items-center">
                 <div class="border-[1px] rounded-full p-2 border-gray-300/50 dark:border-gray-400/40 cursor-pointer"
                     @click="toggleDark" v-if="isDark">
