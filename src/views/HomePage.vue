@@ -21,13 +21,13 @@
                          <div class="relative pl-8 sm:pl-32 py-6 group">
                               <!-- Purple label -->
                             <div class="flex justify-between p-[12px]">
-                              <div class="font-[Caveat] font-medium text-3xl text-indigo-500 mb-1 sm:mb-0">Git</div>
+                              <a class="font-[Caveat] font-medium text-3xl text-indigo-500 mb-1 sm:mb-0" href="https://git-scm.com/" target="_blank">Git</a>
                               <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
                               <div
                                    class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
                                    <div
                                         class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 ">
-                                        <img src="../../public/images/icon-git.svg" class="" alt="">
+                                        <a href="https://git-scm.com/" target="_blank"><img src="../../public/images/icon-git.svg" class="" alt=""></a>
                                    </div>
 
 
@@ -40,17 +40,17 @@
                          <div class="relative pl-8 sm:pl-32 py-6 group">
                               <!-- Purple label -->
                             <div class="flex justify-between p-[12px]">
-                              <div class="font-[Caveat] font-medium text-3xl text-indigo-500 mb-1 sm:mb-0">GitHub</div>
+                              <a class="font-[Caveat] font-medium text-3xl text-indigo-500 mb-1 sm:mb-0"  href="https://github.com/" target="_blank" >GitHub</a>
                               <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
                               <div
                                    class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5 ml-[5px]">
                                    <div v-if="!isDark"
                                         class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 ">
-                                        <img src="../../public/images/github-mark.svg" alt="">
+                                        <a href="https://github.com/" target="_blank" ><img src="../../public/images/github-mark.svg" alt=""></a>
                                    </div>
                                    <div v-if="isDark"
                                         class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 ">
-                                        <img src="../../public/images/icon-github.svg" alt="">
+                                       <a href="https://github.com/" target="_blank"> <img src="../../public/images/icon-github.svg" alt=""></a>
                                    </div>
 
 
@@ -65,8 +65,8 @@
                          <div class="relative pl-8 sm:pl-32 py-6 group">
                               <!-- Purple label -->
                              <div class="flex justify-between p-[12px]">
-                              <div class="font-[Caveat] font-medium text-3xl text-indigo-500 mb-1 sm:mb-0">Docker
-                              </div>
+                              <a class="font-[Caveat] font-medium text-3xl text-indigo-500 mb-1 sm:mb-0" href="https://www.docker.com/" target="_blank">Docker
+                              </a>
                               <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
                               <div
                                    class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
@@ -89,14 +89,14 @@
                          <div class="relative pl-8 sm:pl-32 py-6 group">
                               <!-- Purple label -->
                              <div class="flex justify-between p-[12px]">
-                              <div class="font-[caveat] font-medium text-3xl text-indigo-500 mb-1 sm:mb-0"> Jenkins
-                              </div>
+                              <a class="font-[caveat] font-medium text-3xl text-indigo-500 mb-1 sm:mb-0" href="https://www.jenkins.io/"> Jenkins
+                              </a>
                               <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
                               <div
                                    class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
                                    <div
                                         class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 ">
-                                        <img src="../../public/images/icon-jenkins.svg" alt="">
+                                        <a href="https://www.jenkins.io/"><img src="../../public/images/icon-jenkins.svg" alt=""></a>
                                    </div>
                               </div>
                              </div>
@@ -112,17 +112,17 @@
                          <div class="relative pl-8 sm:pl-32 py-6 group">
                               <!-- Purple label -->
                             <div class="flex justify-between p-[12px]">
-                              <div class="font-[caveat] font-medium text-2xl text-indigo-500 mb-1 sm:mb-0">Amazon Web Services</div>
+                              <a class="font-[caveat] font-medium text-2xl text-indigo-500 mb-1 sm:mb-0" href="https://aws.amazon.com/" target="_blank">Amazon Web Services</a>
                               <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
                               <div
                                    class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
                                    <div v-if="isDark"
                                         class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-16 h-5 mb-3 sm:mb-0 ">
-                                        <img src="../../public/images/icon-aws-light.svg" alt="">
+                                        <a href="https://aws.amazon.com/" target="_blank"><img src="../../public/images/icon-aws-light.svg" alt=""></a>
                                    </div>
                                    <div v-if="!isDark"
                                         class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-16 h-5 mb-3 sm:mb-0 ">
-                                        <img src="../../public/images/icon-aws-dark.svg" alt="">
+                                        <a href="https://aws.amazon.com/" target="_blank"><img src="../../public/images/icon-aws-dark.svg" alt=""></a>
                                    </div>
                             </div>
                               </div>
@@ -136,13 +136,13 @@
                          <div class="relative pl-8 sm:pl-32 py-6 group">
                               <!-- Purple label -->
                             <div class="flex justify-between p-[12px]">
-                              <div class="font-[caveat] font-medium text-2xl text-indigo-500 mb-1 sm:mb-0">Kubernetes</div>
+                              <a class="font-[caveat] font-medium text-2xl text-indigo-500 mb-1 sm:mb-0" href="https://kubernetes.io/" target="_blank">Kubernetes</a>
                               <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
                               <div
                                    class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
                                    <div
                                         class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 ">
-                                        <img src="../../public/images/icon-kube.svg" alt="">
+                                       <a href="https://kubernetes.io/" target="_blank"> <img src="../../public/images/icon-kube.svg" alt=""></a>
                                    </div>
                               </div>
                             </div>
@@ -156,13 +156,13 @@
                          <div class="relative pl-8 sm:pl-32 py-6 group">
                               <!-- Purple label -->
                             <div class="flex justify-between p-[12px]">
-                              <div class="font-[caveat] font-medium text-2xl text-indigo-500 mb-1 sm:mb-0">Terraform</div>
+                              <a class="font-[caveat] font-medium text-2xl text-indigo-500 mb-1 sm:mb-0" href="https://www.terraform.io/">Terraform</a>
                               <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
                               <div
                                    class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
                                    <div
                                         class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 ">
-                                        <img src="../../public/images/icon-terraform.svg" alt="">
+                                        <a href="https://www.terraform.io/" target="_blank"><img src="../../public/images/icon-terraform.svg" alt=""></a>
                                    </div>
 
                               </div>
