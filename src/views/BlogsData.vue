@@ -2,7 +2,7 @@
   <div v-if="getBlogsData == null || undefined">
       <div></div>
   </div>
-  <div v-if="renderData == null" class=" flex justify-center min-w-full mt-[15%]">
+  <div v-if="renderData == null" class=" flex justify-center min-w-full mt-[230px]">
       <div class="atom-spinner">
 <div class="spinner-inner">
   <div class="spinner-line"></div>
